@@ -4,7 +4,7 @@
 2. Retrieve holidays data from https://www.gov.uk/bank-holidays.json;
 3. Filter the data using the given year;
 4. Export the data as a csv in descending order.
-##Code overview
+## Code overview
 The first thing to do is retrieve the holidays json from the the third party after checking if the year parameter is present and valid (more of it in error detection section)
 ```csharp
 HttpClient newClient = new HttpClient();
