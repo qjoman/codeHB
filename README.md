@@ -58,8 +58,8 @@ FileDownloadName = string.Format("england-and-wales-{0}.csv", year)
 ```
 ## Error detection and handling
 There are a few places where errors can happen:
-1. Invalid year param
-   - Year not present
+### Invalid year param
+- Year not present
 ```csharp
 if (String.IsNullOrEmpty(year))
 {
@@ -68,7 +68,7 @@ if (String.IsNullOrEmpty(year))
       return new BadRequestObjectResult("Year is required.");
 }
 ```
-   - Invalid format
+- Invalid format
 ```csharp
 int year_i = 0;
 if (Int32.TryParse(year, out year_i))
@@ -81,7 +81,7 @@ else{
    return new BadRequestObjectResult("Year is not a valid number.");
 }
 ```
-   - Negative year
+- Negative year
 ```csharp
 if (year_i < 0)
 {
@@ -90,7 +90,7 @@ if (year_i < 0)
    return new BadRequestObjectResult("Invalid year. It should be not negative.");
 }
 ```
-2. Requesting to UK holidays API, missing date or data from response (TODO)
+### Requesting to UK holidays API, missing date or data from response (TODO)
 ```csharp
 try
 {
