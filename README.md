@@ -1,5 +1,5 @@
-#Bank holidays
-##Challenge description
+# Bank holidays
+## Challenge description
 1. Create an public (anonymous) Azure Function with HTTP trigger and an year parameter;
 2. Retrieve holidays data from https://www.gov.uk/bank-holidays.json;
 3. Filter the data using the given year;
@@ -56,7 +56,7 @@ return new FileContentResult(Encoding.UTF8.GetBytes(ret), "application/octet-str
 FileDownloadName = string.Format("england-and-wales-{0}.csv", year)
 };
 ```
-##Error detection and handling
+## Error detection and handling
 There are a few places where errors can happen:
 1. Invalid year param
    1.1 Year not present
@@ -106,13 +106,13 @@ catch (Exception e)
       return new BadRequestObjectResult(e.Message);
 }
 ```
-##Testing
+## Testing
 The function can be reached with the url 
 ```
 [GET] https://qjoman.azurewebsites.net/api/BankHolidays?year=2016
 ```
 The query param year can be changed to any value
-##TODO
+## TODO
 1. Add the rest of information (notes and bunting) if needed;
 2. Treat the possible errors when reaching for the third party API;
 3. Treat the possible errors if the "england-and-wales" data is not present;
